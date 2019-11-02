@@ -1,0 +1,7 @@
+'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
+const discord_1 = require("./discord");
+const bot = new discord_1.DiscordTS();
+bot.start();
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxZQUFZLENBQUE7O0FBRVosdUNBQXFDO0FBRXJDLE1BQU0sR0FBRyxHQUFjLElBQUksbUJBQVMsRUFBRSxDQUFBO0FBQ3RDLEdBQUcsQ0FBQyxLQUFLLEVBQUUsQ0FBQSIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0J1xuXG5pbXBvcnQgeyBEaXNjb3JkVFMgfSBmcm9tICcuL2Rpc2NvcmQnXG5cbmNvbnN0IGJvdDogRGlzY29yZFRTID0gbmV3IERpc2NvcmRUUygpXG5ib3Quc3RhcnQoKSJdLCJzb3VyY2VSb290IjoiLi4vLi4vLi4vLi4vYnVpbGQifQ==

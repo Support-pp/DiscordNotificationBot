@@ -1,5 +1,5 @@
 {
-	"name": "spp-discord-notify",
+	"name": "spp-bot-discord",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
@@ -15,8 +15,7 @@
 		"build": "npm run build:gulp -s",
 		"start": "npm run start:gulp -s"
 	},
-	"author": "KlexHub UG (haftungsbeschränkt)",
-	"license": "WTFPL",
+	"license": "MIT",
 	"devDependencies": {
 		"@types/debug": "0.0.30",
 		"@types/node": "^9.6.5",
@@ -29,9 +28,9 @@
 		"gulp-tslint": "^8.1.3",
 		"gulp-typescript": "^4.0.2",
 		"nodemon": "^1.17.3",
-		"tslint": "^5.9.1",
+		"tslint": "^5.20.0",
 		"tslint-eslint-rules": "^5.1.0",
-		"typescript": "^2.8.1"
+		"typescript": "^3.6.4"
 	},
 	"dependencies": {
 		"discord.js": "^11.3.2",
