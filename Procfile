@@ -1,0 +1,2 @@
+worker: discordbot
+web: api
