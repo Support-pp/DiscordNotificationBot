@@ -30,11 +30,13 @@
 		"nodemon": "^1.17.3",
 		"tslint": "^5.20.0",
 		"tslint-eslint-rules": "^5.1.0",
-		"typescript": "^3.6.4"
+		"typescript": "^3.7.2"
 	},
 	"dependencies": {
+		"config-yml": "^0.10.3",
 		"discord.js": "^11.3.2",
 		"express": "^4.17.1",
+		"express-rate-limit": "^5.0.0",
 		"fs": "^0.0.1-security",
 		"jsonwebtoken": "^8.5.1",
 		"yamljs": "^0.3.0"
