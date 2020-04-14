@@ -2,8 +2,10 @@ import { Client, Message, RichEmbed } from "discord.js";
 import { decode } from "punycode";
 const jwt  = require('jsonwebtoken');
 const fs = require('fs');
+
 var privateKEY  = fs.readFileSync('/run/secrets/private.pem', 'utf8');
 var publicKEY = fs.readFileSync('/run/secrets/public.pem', 'utf8');
+
 const config = require('config-yml');
 
 
