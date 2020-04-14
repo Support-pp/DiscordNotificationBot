@@ -26,7 +26,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v3.0
       with:
         # Name of the Docker image
-        image: dscord-notify/discord-notify
+        image: DiscordNotificationBot/discord-notify
         # Tag override for Docker image
         tag: latest
         # Target Docker registry
