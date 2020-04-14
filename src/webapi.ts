@@ -4,7 +4,7 @@ var bodyParser = require('body-parser')
 const jwt  = require('jsonwebtoken');
 const fs = require('fs');
 const index = require('./index');
-var publicKEY = fs.readFileSync('./public.pem', 'utf8');
+var publicKEY = fs.readFileSync('/run/secrets/public.pem', 'utf8');
 import { DiscordTS } from './discord'
 import { readSync } from 'fs';
 
