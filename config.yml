@@ -2,7 +2,6 @@ app:
     ssid: "test33"
 
 discord:
-    token: ""
     cmd_id: "!id"
     cmd_verify: "!verify"
     hasPermission: "ADMINISTRATOR"

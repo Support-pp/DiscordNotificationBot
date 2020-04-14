@@ -30,7 +30,7 @@ export class WebApi {
 
         //Validate JSON body.
         app.use((req: any, res:any, next:any) => {
-            bodyParser.json()(req, res, err => {
+            bodyParser.json()(req, res, (err: any) => {
                 if (err) {
                     console.log("[->] Wrong json reuest.")
                       return res.status(400).json({
@@ -79,8 +79,8 @@ export class WebApi {
             });
         })
 
-        app.listen(3000, function () {
-        console.log('Example app listening on port 3000!');
+        app.listen(8080, function () {
+        console.log('Example app listening on port 8080!');
 
         });
     }

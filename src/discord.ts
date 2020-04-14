@@ -2,8 +2,8 @@ import { Client, Message, RichEmbed } from "discord.js";
 import { decode } from "punycode";
 const jwt  = require('jsonwebtoken');
 const fs = require('fs');
-var privateKEY  = fs.readFileSync('./private.pem', 'utf8');
-var publicKEY = fs.readFileSync('./public.pem', 'utf8');
+var privateKEY  = fs.readFileSync('/run/secrets/private.pem', 'utf8');
+var publicKEY = fs.readFileSync('/run/secrets/public.pem', 'utf8');
 const config = require('config-yml');
 
 
@@ -20,13 +20,14 @@ export class DiscordTS {
                 console.log('Logged in as ' + this.client.user.tag)
 			})
 
-            this.client.on("message", msg => {
+            this.client.on("message", (msg: any) => {
                 if (msg.content === config.discord.cmd_id) {
-
+                try{
                     if(!msg.member.hasPermission(config.discord.hasPermission)){
                         msg.reply(config.message.no_permission);
                         return;
                     }
+                }catch(e){}
 
                     var token = jwt.sign({ channel: msg.channel.id}, privateKEY, { algorithm:  "RS256" });
                     msg.reply(config.message.header_generate_new_token);
@@ -56,7 +57,7 @@ export class DiscordTS {
             });
 
 
-            this.client.login(config.discord.token)
+            this.client.login(process.env.TOKEN)
 		}
 
 /*
@@ -72,7 +73,8 @@ export class DiscordTS {
                      .setColor(config.discord.embedColor)
                     .setDescription(msgO.message)
 
-                this.client.channels.get(channel).send(embedMessage);
+                        this.client.channels.get(channel).send(embedMessage);
+        
                 return;
             }
             this.client.channels.get(channel).send(msgO.message);
