@@ -1,4 +1,4 @@
-import { Client, Message, RichEmbed } from "discord.js";
+import { Client, Message, MessageEmbed, TextChannel } from "discord.js";
 import { decode } from "punycode";
 const jwt  = require('jsonwebtoken');
 const fs = require('fs');
@@ -19,7 +19,7 @@ export class DiscordTS {
 		public start(): void {
 			this.client.on("ready", () => {
                 console.log("[>] Connected.")
-                console.log('Logged in as ' + this.client.user.tag)
+                console.log('Logged in as ' + this.client.user?.tag)
 			})
 
             this.client.on("message", (msg: any) => {
@@ -71,14 +71,16 @@ export class DiscordTS {
             console.log("> Send " + JSON.stringify(msgO) + " to channel {"+channel+"}")
 
             if (msgO.embed){
-                const embedMessage = new RichEmbed()
+                const embedMessage = new MessageEmbed()
                      .setColor(config.discord.embedColor)
                     .setDescription(msgO.message)
 
-                        this.client.channels.get(channel).send(embedMessage);
+                       const channelSend = this.client.channels.cache.get(channel) as TextChannel
+                       channelSend.send(embedMessage);
         
                 return;
             }
-            this.client.channels.get(channel).send(msgO.message);
+            const channelSend = this.client.channels.cache.get(channel) as TextChannel
+            channelSend.send(msgO.message);
         }
 	}

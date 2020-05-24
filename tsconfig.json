@@ -9,6 +9,7 @@
 		"sourceMap": true,
 		"noImplicitAny": true,
 		"alwaysStrict": true,
+		"types": [],
 		"typeRoots": [
             "./node_modules/@types"
         ]
