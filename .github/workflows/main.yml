@@ -6,7 +6,7 @@ name: Docker
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [main]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -17,23 +17,23 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    - name: Docker Build & Push
-      uses: mr-smithers-excellent/docker-build-push@v3.0
-      with:
-        # Name of the Docker image
-        image: supportpp/discord-bot-notify
-        # Tag override for Docker image
-        tag: latest
-        dockerfile: Dockerfile
-        registry: docker.io
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }} 
-  
-    - name: Deploy docker container webhook
-      uses: joelwmale/webhook-action@master
-      env:
-        WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL  }}
-        data: "{ 'myField': 'myFieldValue'}"
+      - name: Docker Build & Push
+        uses: mr-smithers-excellent/docker-build-push@v3.0
+        with:
+          # Name of the Docker image
+          image: supportpp/discord-bot-notify
+          # Tag override for Docker image
+          tag: latest
+          dockerfile: Dockerfile
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Deploy docker container webhook
+        uses: joelwmale/webhook-action@master
+        env:
+          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL  }}
+          data: "{ 'myField': 'myFieldValue'}"
