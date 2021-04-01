@@ -2,7 +2,7 @@
   "name": "spp-bot-discord",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "watch": "npm run watch:gulp -s",
     "lint": "npm run lint:gulp -s",
