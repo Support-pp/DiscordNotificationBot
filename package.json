@@ -12,7 +12,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/debug": "0.0.30",
+    "@types/debug": "4.1.6",
     "@types/node": "^9.6.61",
     "@types/ws": "^7.4.0",
     "ts-node": "^9.1.1",
